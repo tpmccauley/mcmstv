@@ -1,68 +1,116 @@
 <html>
 <head>
-  <link rel="stylesheet" href="mcmstv.css" type="text/css"/>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+  <link rel="stylesheet" href="jqtouch.css" type="text/css"/>
+  <link rel="stylesheet" href="theme.css" type="text/css"/>
+  <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="jqtouch.js"></script>
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
-
+  <link rel="apple-touch-startup-image" href="images/loadImage-CMSphoto.png"/>
+  <link rel="apple-touch-icon-precompsed" href="images/cms-logo-small.png"/>
+  <link rel="apple-touch-icon" href="images/cms-logo-small.png"/>
+  <link rel="icon" type="image/png" href="images/cms-logo-small.png"/>
   <title>CMS TV</title>
 
-  <link rel="apple-touch-icon" href="images/cms-logo-small.png"/>
-  <link rel="apple-touch-startup-image" href="images/loadImage2.png"/>
+  <script type="text/javascript">
+  var jQT = $.jQTouch({
+   icon: './images/cms-logo-small.png'
+  });
+  </script>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-15537867-2");
+  pageTracker._trackPageview();
+  } catch(err) {}
+  </script>
+
+  <script type="text/javascript">
+  function reload(dimg, img) {
+  $(dimg).append('<div id="progress">Loading...</div>');
+  var oldsrc = $(img).attr("src");
+  $(img).attr("src", oldsrc+"?timestamp="+ new Date().getTime());
+  $(img).load(function() {
+     $('#progress').remove();
+   });
+  }
+  </script>
 </head>
-
 <body>
-  <div id="header">
-  <h1><a href="./">CMS TV</a></h1>
-    <ul>
-      <!--<li><a href="http://cmsdoc.cern.ch/B40tvs/lhc_page1.html">LHC Status</a>-->
-       <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=1">LHC Status</a></li>       
+<div id="jqt">
+  <div id="home" class="current">
+    <div class="toolbar"><h1>CMS TV</h1>
+    <a class="button flip" href="#about">About</a>
+    </div>
+    <ul class="edgetoedge">
+      <li class="arrow"><a href="#lhc">LHC Status</a></li>
+      <li class="arrow"><a href="#lumi">LHC Luminosity</a></li>
+      <li class="arrow"><a href="#cms">CMS Status</a></li>
+      <li class="arrow"><a href="#daq">DAQ Status</a></li>
+      <li class="arrow"><a href="#evd">Live Event Display</a></li>
     </ul>
-    <ul>
-       <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=12">Live Event Display</a></li>
-    </ul>
-    <ul>
-      <li><a href="http://cmsdoc.cern.ch/B40tvs/cms_daq.html">CMS Status</a></li>
-    </ul>
-    <ul>
-      <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=7">Events (2010)</a></li>
-    </ul>
-    <ul>
-      <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=6">Events (2009)</a></li>
-    </ul>
-    <ul>    
-      <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=9">CMS Photos</a></li>
-    </ul>
-    <ul>
-      <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=10">CMS News</a></li>
-    </ul>  
   </div>
-
-  <div id="content">
-    <h3>About</h3>
-    <p>
+  
+  <div id="about">
+    <div class="toolbar"><h1>About</h1>
+    <a class="button back" href="#">Back</a>
+    </div>
+    <div class="text">
+    <p style="margin-bottom:10px;">
       CMS TV is the live, auto-updating web channel for keeping up to date with operations at the LHC and the CMS experiment. 
     </p>
-    <p>
-      CMS TV was created and is managed by <a href="mailto:gilles.raymond@cern.ch">Gilles Raymond</a> and <a href="mailto:lucas.taylor@cern.ch">Lucas Taylor</a>. This mobile interface was created and is maintained by <a href="mailto:thomas.mccauley@cern.ch">Tom McCauley</a>.
+    <p style="margin-bottom:10px;">
+      CMS TV was created and is managed by <a href="">Gilles Raymond</a> and <a href="">Lucas Taylor</a>. This mobile interface was created and is maintained by <a href="mailto:thomas.mccauley@cern.ch">Tom McCauley</a>.
     </p>
-  </div>
-
-  <div id="footer">
-    <ul>
-      <li><a href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=1&frames=yes">CMS TV "classique"</a></li>
+     <ul>
+     <li><a class="clickout" target="_blank" style="text-align:center;" href="http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=1&frames=yes">CMS TV "classique"</a></li>
     </ul>
+    </div>
   </div>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-15537867-2");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+  <div id="lhc">
+    <div class="toolbar"><h1>LHC Status</h1>
+    <a class="button back" href="#">Back</a>
+    <a class="button" onclick="reload('#lhc','#lhcimg');">Refresh</a>
+    </div>
+    <img id="lhcimg" class="cmstv" width=100% height=100% src="http://vistar-capture.web.cern.ch/vistar-capture/lhc1.png"></img>
+  </div>
 
+  <div id="lumi">
+    <div class="toolbar"><h1>LHC Luminosity</h1>
+    <a class="button back" href="#">Back</a>
+    <a class="button" onclick="reload('#lumi', '#lumiimg');">Refresh</a>
+    </div>
+    <img id="lumiimg" class="cmstv" width=100% height=100% src="http://vistar-capture.web.cern.ch/vistar-capture/lhclumi.png"></img> 
+  </div>
+
+  <div id="cms">
+    <div class="toolbar"><h1>CMS Status</h1>
+    <a class="button back" href="#">Back</a>
+    <a class="button" onclick="reload('#cms', '#cmsimg');">Refresh</a>
+    </div>
+    <img id="cmsimg" class="cmstv" width=100% height=100% src="http://cmspage1.web.cern.ch/cmspage1/data/page1.png"></img>
+  </div>
+
+  <div id="daq">
+    <div class="toolbar"><h1>DAQ Status</h1>
+    <a class="button back" href="#">Back</a>
+    <a class="button" onclick="reload('#daq', '#daqimg');">Refresh</a>
+    </div>
+    <img id="daqimg" class="cmstv" width=100% height=100% src="http://cmsonline.cern.ch/daqStatusSCX/aDAQmon/DAQstatusGre.jpg"></img>
+  </div>
+
+  <div id="evd">
+    <div class="toolbar"><h1>Live Event Display</h1>
+    <a class="button back" href="#">Back</a>
+    <a class="button" onclick="reload('#evd', '#evdimg');">Refresh</a>
+    </div>
+    <img id="evdimg" class="cmstv" width=100% height=100% src="http://cmsonline.cern.ch/evtdisp/3D.png"></img>
+  </div>
+
+</div>
 </body>
 </html>
