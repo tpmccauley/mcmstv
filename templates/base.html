@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+{{super()}}
+    
+<link rel="shortcut icon" href="{{ url_for('static', filename='cms-favicon.png') }}" type="image/png"/>
+
+<style>
+  .navbar-light {
+      background-color: #a6e0f1;
+  }
+  body {
+      background-color: #fee3c6;
+  }
+</style>
+
+{% endblock %}

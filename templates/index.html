@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-light" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">CMS TV</a>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="list-group">
+
+    <a class="list-group-item list-group-item-action" href="{{ url_for('lhc_status') }}">
+      LHC Status
+    </a>
+    
+    <a class="list-group-item list-group-item-action" href="{{ url_for('lhc_luminosity') }}">
+      LHC Luminosity
+    </a>
+    
+    <a class="list-group-item list-group-item-action" href="{{ url_for('cms_status') }}">
+      CMS Status
+    </a>
+
+    <a class="list-group-item list-group-item-action" href="{{ url_for('daq_status') }}">
+      DAQ Status
+    </a>
+
+    <a class="list-group-item list-group-item-action" href="{{ url_for('live_event_display') }}">
+      Live Event Display
+    </a>
+
+    <a class="list-group-item list-group-item-action" href="{{ url_for('about') }}">
+      About
+    </a>
+
+  </div>
+  
+</div>
+{% endblock %}

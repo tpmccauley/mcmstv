@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block navbar %}
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">CMS TV</a>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>{{ title }}</h1>
+   
+  <p>
+    CMS TV was the live, auto-updating web channel for keeping up to date with operations
+    at the LHC and the CMS experiment. It was created and and managed by
+    <a href="">Gilles Raymond</a> and
+    <a href="">Lucas Taylor</a>.
+    This mobile interface was created and is maintained by
+    <a href="mailto:thomas.mccauley@cern.ch">Tom McCauley</a>.
+  </p>
+
+  <p>
+    <a href="https://op-webtools.web.cern.ch/Vistar/vistars.php" target="_blank">
+      <button type="button" class="btn btn-outline-primary">
+	LHC Vistars
+      </button>
+    </a>
+  </p>
+  
+</div>
+{% endblock %}
