@@ -1,6 +1,7 @@
 mcmstv
 ======
 
-Mobile interface to CMS TV
+An app that collects and displays information regarding the operation of the LHC
+and the CMS experiment.
 
 https://mcmstv.web.cern.ch/
